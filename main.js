@@ -6,6 +6,32 @@ hackStr = hackStr.split(/<br>/gi);
 console.log(hackStr);
 
 console.log(hackStr[2] == "");
+StringCut("<br>");
+function StringCut(...str){
+    let resultArr = [];
+
+    let startIdx = [];
+    let endIdx = [];
+    let temptIdx = [];
+    /*
+    1. str의 시작인덱스와 끝 인덱스 찾기
+    2. str을 제외한 나머지는 다 하나로 끝고 str은 덩어리로 두기
+    */ 
+    for(let i = 0 ;  i < str.length; i++){
+        let temp = "/" + str[i].toString() + "/";
+        startIdx[i] = hackStr.search(temp);
+        for(let k = 0 ;  k < startIdx[i].length ;  i++){
+            temptIdx[k] = startIdx[i][k] + str[i].length;
+        }
+        endIdx = temptIdx.slice();
+        temptIdx = [];  
+    }
+    console.log(`startIndex : ${startIdx}`);
+    console.log(`ednIndex : ${endIdx}`);
+
+}
+
+
 /*
 let ani;
 let count = 0;
