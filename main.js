@@ -10,6 +10,7 @@ let TargetArr = [...hackStr];
 let countIndex = 0;
 let Ani;
 let reStart = false;
+let isfull;
 
 let slicedHackStrArr = sliceSpecial("<br>","&nbsp;");
 onPrint();
@@ -85,12 +86,31 @@ function startPrint(){
     Ani = requestAnimationFrame(onPrint);
 }
 
-function openFullScreenMode(){
-    if(docV.requestFullscreen)
-        docV.requestFullscreen();
-}
+/*전체화면이고 싶었지만 안되네 와우*/
+/*
+window.addEventListener('keyup', (event)=>{
+    if(event.keyCode == 122){
+        if(!isfull){
+            openFullScreenMode();
+        }
+        else{
+            closeFullScreenMode();
+        }
+    }
+})
 
-function closeFullScreenMode(){
-    if(document.exitFullscreen)
-        document.exitFullscreen();
+function openFullScreenMode(){
+    isfull = true;
+    if(document.body.requestFullscreen){
+        document.body.requestFullscreen();
+    }
+    else if(document.body.webkitRequestFullscreen){
+        document.body.webkitRequestFullscreen();
+    }
 }
+/*
+function closeFullScreenMode(){
+    document.body.full
+    isfull = false;
+}
+*/
