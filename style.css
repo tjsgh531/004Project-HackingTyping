@@ -1,12 +1,22 @@
-
 html,body{
     width:100%;
 }
 body{
     color: #00ff00;
     background: black;
-    font-size: 14px;
+    font-size: 16px;
 
     box-sizing: border-box;
     padding: 5px;
+}
+#caution{
+    z-index: 999;
+    position: fixed;
+    top:calc(50% - 140px);
+    left:calc(50% - 240px);
+}
+#caution img{
+    width: 480px;
+    height: 280px;
+    opacity: 0.3;
 }
