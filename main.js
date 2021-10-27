@@ -70,8 +70,15 @@ function onPrint(){
 
 window.addEventListener('keyup',(event)=>{
     if(event.keyCode == 27){
-        stopPrint();
-        reStart = true;
+        if(!reStart){
+            stopPrint();
+            reStart = true;
+        }
+        else{
+            reStart = false;
+            startPrint();
+        }
+       
     }
     else if(event.keyCode == 13){
         if(reStart){
